@@ -1,0 +1,38 @@
+<html>
+  <body>
+    <div style="width: 900px;
+      height: 600px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.73);
+      text-align: center;
+      padding-top: 35px;
+      margin-top: -30px;">
+      <h2> cool的博客</h2>
+      <div>
+        <table style="width: 100%;text-align: center;" class="table table-bordered table-hover">
+          <tr>
+            <td>时间</td>
+            <td>标题</td>
+          <% if current_user.present? %>
+            <td colspan=2 >操作</td>
+          <% end %>
+          </tr>
+
+          <% @articles.each do |article| %>
+          </tr>
+            <td><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+            <td><%= link_to article.title, article %></td>
+            <% if current_user.present? %>
+              <td><%= link_to "编辑", edit_article_path(article)%></td>
+              <td><%= link_to "删除", article, :method => :delete %></td>
+            <% end %>
+          </tr>
+          <% end %>
+        </table>
+          <% if current_user.present? %>
+            <td><%= link_to "创建博客", new_article_path %></td>
+          <% end %>
+      </div>
+    </div>
+  </body>
+</html>
