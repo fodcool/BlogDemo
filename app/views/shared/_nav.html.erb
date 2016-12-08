@@ -1,15 +1,20 @@
 <html>
 <head>
-	<style>
+  <style>
 .register_and_log_on {
 }
-	</style>
+
+div ul li a {
+  padding: 25px !important;
+  font-size: 25px;
+}
+  </style>
 </head>
 
 <body>
   <div class="brand">欢迎来到我的博客</div>
-  <div class="address-bar">北京市朝阳区里外里公寓</div>
-<nav class="navbar navbar-default" role="navigation">
+  <div class="address-bar">我是一个爱音乐的程序员</div>
+  <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 30px;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -22,22 +27,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.html">首页</a>
+                    <%= link_to '首页', root_path %>
                 </li>
                 <li>
-                    <a href="blog.html">博客</a>
+                    <%= link_to '生活', articles_path(category_id: 1)%>
                 </li>
                 <li>
-                    <a href="about.html">生活</a>
-                </li>
-                <li>
-                    <a href="contact.html">技术</a>
+                    <%= link_to '技术', articles_path(category_id: 2)%>
                 </li>
                 <li class="register_and_log_on">
-								    <%= link_to "注册", new_user_registration_path %>
+                  <% if current_user.present? %>
+                    <%= link_to "注册", new_user_registration_path %>
+                  <% end %>
                 </li>
                 <li class="register_and_log_on">
-								    <%= link_to "登录", new_user_session_path %>
+                  <% if current_user.blank?%>
+                    <%= link_to "登录", new_user_session_path %>
+                    <% else %>
+                    <%= link_to '退出', destroy_user_session_path, method: :delete %>
+                  <% end %>
                 </li>
             </ul>
         </div>
