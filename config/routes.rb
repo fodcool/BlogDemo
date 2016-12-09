@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users do
+    get "/signup", :to => "devise/registrations#new", :as => :signup
+  end
 
   root to: "articles#welcome"
 end
