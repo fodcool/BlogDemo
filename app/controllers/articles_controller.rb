@@ -22,8 +22,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create params[:article]
-    redirect_to articles_path(category_id: 2)
+    article = Article.create params[:article]
+    if article.category_id == 1
+      redirect_to articles_path(category_id: 1)
+    else
+      redirect_to articles_path(category_id: 2)
+    end
   end
 
   def destroy
