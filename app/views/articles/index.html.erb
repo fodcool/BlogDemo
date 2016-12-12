@@ -6,7 +6,11 @@
   padding-top: 35px;
   margin-top: -30px;">
 
-  <h2> cool的博客</h2>
+  <% if @articles.first.category_id == 1 %>
+		<h2 style="margin-bottom: 20px; color: #20537f;"> 生活博客</h2>
+	<% else %>
+		<h2 style="margin-bottom: 20px; color: #20537f;"> 技术博客</h2>
+	<% end %>
 
   <div style="font-size: 18px;">
     <table style="width: 100%;text-align: center;" class="table table-bordered table-hover">
@@ -21,7 +25,10 @@
       <% @articles.each do |article| %>
       </tr>
         <td><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-        <td><%= link_to article.title, article %></td>
+        <td>
+				<%= link_to article.title, article %>
+				<%= "("+ "#{article.visited_count}"+")" %>
+				</td>
         <% if current_user.present? %>
           <td><%= link_to "编辑", edit_article_path(article)%></td>
           <td><%= link_to "删除", article, :method => :delete %></td>
