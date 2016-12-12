@@ -6,7 +6,7 @@
   <br/>
   <%= f.label :content, "内容:" %>
   <br/>
-  <%= f.text_area :content, size: "40x12", placeholder: "请输入正文内容" %>
+  <%= f.cktext_area :content, placeholder: "请输入正文内容" %>
   <br/>
   <%= f.label :category_id, "分类" %>
   <%#= f.select :category_id, options_for_select([["生活", 1],["技术", 2]],2) %>

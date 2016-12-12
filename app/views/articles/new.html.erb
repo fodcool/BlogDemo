@@ -1,18 +1,14 @@
 
-<html>
-  <body>
-    <div style="width: 900px;
-      height: 600px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.73);
-      text-align: center;
-      padding-top: 65px;
-      margin-top: -30px;
-      font-size: 18px;">
+<div style="width: 900px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.73);
+  text-align: center;
+  padding-top: 65px;
+  margin-top: -30px;
+  font-size: 18px;">
 
-      <%= render :partial => "form" %><br/>
+  <%= render :partial => "form" %><br/>
 
-      <%= link_to "返回博客列表", articles_path(category_id: 1) %>
-    </div>
-  </body>
-</html>
+  <%= link_to "返回博客列表", articles_path(category_id: 1) %>
+</div>
