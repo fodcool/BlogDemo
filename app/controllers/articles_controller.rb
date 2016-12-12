@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    article = Article.find params[:id]
+    count = article.visited_count + 1
+    article.visited_count = count
+    article.save
   end
 
   def edit
