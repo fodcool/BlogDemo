@@ -1,0 +1,42 @@
+
+<div style="width: 900px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.73);
+  text-align: center;
+  padding-top: 65px;
+  margin-top: -30px;
+  font-size: 15px;">
+  <h2 style="margin-bottom: 20px; color: #20537f;">博主简介</h2>
+
+  <div style="width: 600px;
+    margin: 0 auto;
+    height: 400px;
+    margin-bottom: 20px;
+    padding: 15px;
+    overflow: auto;
+    white-space: pre-line;">
+
+    <table style="width: 100%;text-align: center;" class="table table-bordered table-hover">
+      <tr>
+        <td>时间</td>
+        <td>标题</td>
+      <% if current_user.present? %>
+        <td>操作</td>
+      <% end %>
+      </tr>
+
+      <% @user.each do |user| %>
+      </tr>
+        <td><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        <td><%= link_to user.id, user %></td>
+        <% if current_user.present? %>
+          <td><%= link_to "编辑", edit_user_path(user)%></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <%= link_to "返回首页", welcome_articles_path %>
+</div>

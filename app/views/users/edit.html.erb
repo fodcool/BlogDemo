@@ -1,0 +1,16 @@
+
+<div style="width: 900px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.73);
+  text-align: center;
+  margin-top: -30px;
+  font-size: 18px;">
+
+  <%= form_for @user do |f| %>
+    <%= f.cktext_area :author_intro %>
+    <%= f.submit "提交" %>
+  <% end %>
+
+  <%= link_to "返回列表页", users_path %>
+</div>

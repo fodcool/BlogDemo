@@ -1,0 +1,24 @@
+
+<div style="width: 900px;
+     height: 600px;
+     margin: 0 auto;
+     background-color: rgba(255, 255, 255, 0.73);
+     text-align: center;
+     padding-top: 65px;
+     margin-top: -30px;
+     font-size: 15px;">
+  <h2 style="margin-bottom: 20px; color: #20537f;">博主简介</h2>
+
+  <div style="width: 600px;
+    margin: 0 auto;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.36);
+    margin-bottom: 20px;
+    padding: 15px;
+    overflow: auto;
+    white-space: pre-line;
+    text-indent: 1cm;">
+    <p style="text-align: initial; text-indent: 1cm;"><%= raw @user.author_intro %></p>
+  </div>
+    <%= link_to "返回列表页", users_path %>
+</div>

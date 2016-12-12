@@ -30,15 +30,16 @@ div ul li a {
                     <%= link_to '首页', root_path %>
                 </li>
                 <li>
-                    <%= link_to '生活', articles_path(category_id: 1)%>
+                    <%= link_to '生活', articles_path(category_id: 1) %>
                 </li>
                 <li>
-                    <%= link_to '技术', articles_path(category_id: 2)%>
+                    <%= link_to '技术', articles_path(category_id: 2) %>
+                </li>
+                <li>
+                    <%= link_to '博主简介', current_user.blank? ? user_path(id: 2) : current_user  %>
                 </li>
                 <li class="register_and_log_on">
-                  <% if current_user.present? %>
-                    <%= link_to "注册", new_user_registration_path %>
-                  <% end %>
+                    <%#= link_to "注册", new_user_registration_path %>
                 </li>
                 <li class="register_and_log_on">
                   <% if current_user.blank?%>
