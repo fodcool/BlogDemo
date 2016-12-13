@@ -4,7 +4,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <p style="padding: 32px 0;">Copyright@文圆承的博客 2016 </p>
+        <% sum = 0
+           Article.all.each do |article|
+             sum += article.visited_count
+           end %>
+        <p style="padding: 32px 0;">
+          Copyright@文圆承的博客 2016 <br/>
+          总访问量:<%= sum %>
+        </p>
       </div>
     </div>
   </div>
