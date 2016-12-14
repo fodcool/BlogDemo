@@ -5,7 +5,7 @@
      text-align: center;
      padding-top: 35px;
      margin-top: -30px;
-     font-size: 15px;">
+     font-size: 18px;">
   <h2 style="margin-bottom: 20px; color: #20537f;"><%= @article.title %></h2>
 
   <div style="width: 600px;
@@ -15,8 +15,10 @@
     margin-bottom: 20px;
     padding: 15px;
     overflow: auto;
-    white-space: pre-line;">
-    <p style="text-align: initial; text-indent: 1cm;"><%= raw @article.content %></p>
+    white-space: normal;
+    text-align: initial;
+    text-indent: 1cm;">
+    <p><%= raw @article.content %></p>
   </div>
 
   <% if @article.category_id ==1 %>

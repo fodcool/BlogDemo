@@ -19,3 +19,5 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+
+gem 'kaminari'

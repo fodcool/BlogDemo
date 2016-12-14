@@ -6,7 +6,7 @@
      text-align: center;
      padding-top: 35px;
      margin-top: -30px;
-     font-size: 18px;">
+     font-size: 16px;">
   <h2 style="margin-bottom: 20px; color: #20537f;">博主简介</h2>
 
   <div style="width: 600px;
@@ -16,9 +16,10 @@
     margin-bottom: 20px;
     padding: 15px;
     overflow: auto;
-    white-space: pre-line;
-    text-indent: 1cm;">
-    <p style="text-align: initial; text-indent: 1cm;"><%= raw @user.author_intro %></p>
+    white-space: normal;
+    text-indent: 1cm;
+    text-align: initial;">
+    <p><%= raw @user.author_intro %></p>
   </div>
     <%= link_to "返回列表页", users_path %>
 </div>
