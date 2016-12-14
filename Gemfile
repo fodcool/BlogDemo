@@ -4,7 +4,7 @@ gem 'rails', '4.1.6'
 
 gem 'mysql2',"0.3.17"
 
-gem 'bootstrap-sass', '~> 3.3.5'
+gem "twitter-bootstrap-rails"
 
 gem 'devise'
 
