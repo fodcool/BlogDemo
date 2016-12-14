@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.where("category_id = ?", params[:category_id])
+    article = Article.where("category_id = ?", params[:category_id])
+    @articles = article.page(params[:page]).per(8)
   end
 
   def show
