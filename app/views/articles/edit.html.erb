@@ -9,6 +9,11 @@
   font-size: 18px;
 	overflow: auto;">
 
+  <!--
+  <label for="datetimepicker">时间：</label><br/>
+	<input type="text" id="datetimepicker"/><br/>
+  -->
+
   <%= render :partial => "form" %><br/>
 
   <% if @article.category_id ==1 %>
@@ -17,3 +22,11 @@
     <%= link_to "返回博客列表", articles_path(category_id: 2) %>
   <% end %>
 </div>
+
+  <!--
+  <script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+  </script>
+  -->

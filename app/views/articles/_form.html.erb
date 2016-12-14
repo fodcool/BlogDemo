@@ -1,4 +1,3 @@
-
 <%= form_for @article do |f| %>
   <%= f.label :title, "标题:" %>
   <br/>
@@ -14,3 +13,20 @@
   <br/>
   <%= f.submit "提交" %>
 <% end %>
+
+<script>
+$("form").validate({
+  rules:{
+    "article[title]":"required",
+    "article[content]":{
+    "required":true,
+    },
+  },
+  messages:{
+    "article[title]":"请输入标题",
+    "article[content]":{
+    "required":"请输入正文内容",
+    },
+  }
+});
+</script>

@@ -1,19 +1,24 @@
 class UsersController < ApplicationController
+
+  before_action :get_by_id, :only => [:show, :edit, :update ]
+
   def index
     @user = User.all
   end
 
   def show
-    @user = User.find params[:id]
   end
 
   def edit
-    @user = User.find params[:id]
   end
 
   def update
-    @user = User.find params[:id]
     @user.update params[:user]
     redirect_to users_path
+  end
+
+  private
+  def get_by_id
+    @user = User.find params[:id]
   end
 end
