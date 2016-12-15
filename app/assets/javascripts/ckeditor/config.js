@@ -10,6 +10,8 @@ CKEDITOR.editorConfig = function( config )
   config.height='360px';
   // config.uiColor = '#AADC6E';
 
+  config.allowedContent = true;
+
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";

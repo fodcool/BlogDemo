@@ -14,7 +14,7 @@ module BlogDemo
     # config.time_zone = 'Central Time (US & Canada)'
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = "zh"
+    config.i18n.default_locale = "zh-CN"
     config.action_controller.permit_all_parameters = true
 
     log4r_config= YAML.load_file(File.join(File.dirname(__FILE__),"log4r.yml"))
