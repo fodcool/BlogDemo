@@ -24,4 +24,3 @@ gem 'kaminari'
 
 gem 'log4r', '1.1.9'
 
-gem 'migration_comments'
