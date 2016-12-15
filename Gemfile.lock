@@ -78,8 +78,6 @@ GEM
     log4r (1.1.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    migration_comments (0.3.2)
-      activerecord (>= 2.3.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -151,7 +149,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   log4r (= 1.1.9)
-  migration_comments
   mini_magick
   mysql2 (= 0.3.17)
   rails (= 4.1.6)
