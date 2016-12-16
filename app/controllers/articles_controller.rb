@@ -3,9 +3,7 @@ class ArticlesController < ApplicationController
   before_action :get_by_id, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.where("category_id = ?", params[:category_id])
-    article = Article.where("category_id = ?", params[:category_id])
-    @articles = article.page(params[:page]).per(8)
+    @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(8)
   end
 
   def show
