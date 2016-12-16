@@ -1,6 +1,0 @@
-development:
-  adapter: mysql2
-  database: Blog_demo
-  username: root
-  password: 666
-  host: localhost
