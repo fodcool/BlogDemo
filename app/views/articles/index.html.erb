@@ -7,11 +7,7 @@
   margin-top: -30px;
   overflow: auto;">
 
-  <% if @articles.first.category_id == 1 %>
-		<h2 style="margin-bottom: 20px; color: #20537f;"> 生活博客</h2>
-	<% else %>
-		<h2 style="margin-bottom: 20px; color: #20537f;"> 技术博客</h2>
-	<% end %>
+  <h2 style="margin-bottom: 20px; color: #20537f;"> <%= Article.title params[:category_id] %> </h2>
 
   <div style="font-size: 18px;">
     <table style="width: 100%;text-align: center;" class="table table-bordered table-hover">
