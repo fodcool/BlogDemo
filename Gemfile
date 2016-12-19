@@ -16,8 +16,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
-gem 'carrierwave'
+gem 'carrierwave', '0.9.0'
+gem 'upyun', '1.0.7'
+gem "carrierwave-upyun", '0.2.1'
+
 gem 'mini_magick'
+
 gem 'ckeditor'
 
 gem 'kaminari'
