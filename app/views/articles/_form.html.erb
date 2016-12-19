@@ -1,3 +1,8 @@
+<style>
+.cke_contents{
+  height: 540px !important;
+}
+</style>
 <%= form_for @article do |f| %>
   <%= f.label :title, "标题:" %>
   <br/>
@@ -5,7 +10,7 @@
   <br/>
   <%= f.label :content, "内容:" %>
   <br/>
-  <%= f.cktext_area :content, placeholder: "请输入正文内容" %>
+  <p style="width: 80%; margin: 0 auto;"> <%= f.cktext_area :content, placeholder: "请输入正文内容" %> </p>
   <br/>
   <%= f.label :category_id, "分类" %>
   <%#= f.select :category_id, options_for_select([["生活", 1],["技术", 2]],2) %>

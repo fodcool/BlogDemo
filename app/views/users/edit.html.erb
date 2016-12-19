@@ -1,16 +1,26 @@
 
-<div style="width: 900px;
-  height: 600px;
+<style>
+.cke_contents{
+  height: 500px !important;
+}
+</style>
+
+<div style="width: 60%;
+  height: 800px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.73);
   text-align: center;
   margin-top: -30px;
-  font-size: 18px;">
+  font-size: 18px;
+  overflow: auto;">
 
   <%= form_for @user do |f| %>
-    <%= f.cktext_area :author_intro %>
+    <br/>
+    <h2 style="margin-bottom: 20px; color: #20537f;">博主简介</h2>
+    <p style="width: 80%; margin: 0 auto;"> <%= f.cktext_area :author_intro %> </p>
+    <br/>
     <%= f.submit "提交" %>
   <% end %>
-
+    <br/>
   <%= link_to "返回列表页", users_path %>
 </div>

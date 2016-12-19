@@ -1,5 +1,5 @@
-<div style="width: 900px;
-  height: 600px;
+<div style="width: 60%;
+  height: 800px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.73);
   text-align: center;
@@ -21,7 +21,7 @@
       <% @articles.each do |article| %>
       </tr>
         <td><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-        <td>
+        <td style="text-align: left; margin-left: 10px;">
 				<%= link_to article.title, article %>
 				<%= "("+ "#{article.visited_count}"+")" %>
 				</td>
