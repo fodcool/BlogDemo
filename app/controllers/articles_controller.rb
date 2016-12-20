@@ -4,6 +4,17 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(12)
+
+    #@search = Article.where("category_id = ?", params[:category_id])
+    #def self.search(search)
+    #  where("name LIKE ?", "%#{search}%")
+    #  where("content LIKE ?", "%#{search}%")
+    #end
+    #if params[:search]
+    #  @search = Article.search(params[:search]).order("created_at DESC")
+    #else
+    #  @search = Article.all.order('created_at DESC')
+    #end
   end
 
   def show
@@ -16,7 +27,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update params[:article]
-    redirect_to articles_path(category_id: 2)
+    if @article.category_id == 1
+      redirect_to articles_path(category_id: 1)
+    else
+      redirect_to articles_path(category_id: 2)
+    end
   end
 
   def new

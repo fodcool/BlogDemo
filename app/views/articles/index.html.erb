@@ -9,8 +9,15 @@
 
   <h2 style="margin-bottom: 20px; color: #20537f;"> <%= Article.title params[:category_id] %> </h2>
 
+  <!--
+  <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "模糊匹配" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+  -->
+
   <div style="font-size: 18px;">
-    <table style="width: 100%;text-align: center;" class="table table-bordered table-hover">
+    <table style="width: 100%; text-align: center;" class="table table-bordered table-hover">
       <tr>
         <td>时间</td>
         <td>标题</td>
