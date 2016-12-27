@@ -1,4 +1,4 @@
-<div style="width: 60%;
+<div style="width: 80%;
   height: 800px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.73);
@@ -7,7 +7,7 @@
   margin-top: -30px;
   overflow: auto;">
 
-  <h2 style="margin-bottom: 20px; color: #20537f;"> <%= Article.title params[:category_id] %> </h2>
+  <h2 style="margin-bottom: 20px; color: #20537f; margin-top: 0;"> <%= Article.title params[:category_id] %> </h2>
 
   <!--
   <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
@@ -18,25 +18,30 @@
 
   <div style="font-size: 18px;">
     <table style="width: 100%; text-align: center;" class="table table-bordered table-hover">
-      <tr>
-        <td>时间</td>
-        <td>标题</td>
-      <% if current_user.present? %>
-        <td colspan=2 >操作</td>
-      <% end %>
-      </tr>
-      <% @articles.each do |article| %>
-      </tr>
-        <td><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-        <td style="text-align: left; margin-left: 10px;">
-				<%= link_to article.title, article %>
-				<%= "("+ "#{article.visited_count}"+")" %>
-				</td>
+      <thead>
+        <tr>
+          <th style="width: 25%; text-align: center;">时间</td>
+          <th style="text-align: center;">标题</td>
         <% if current_user.present? %>
-          <td><%= link_to "编辑", edit_article_path(article)%></td>
-          <td><%= link_to "删除", article, :method => :delete %></td>
+          <th colspan=2 style="width: 12%; text-align: center;">操作</td>
         <% end %>
-      </tr>
+        </tr>
+      </thead>
+
+      <% @articles.each do |article| %>
+      <tbody>
+        </tr>
+          <td style="vertical-align: middle;"><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td style="text-align: left; margin-left: 10px;">
+          <%= link_to article.title, article %>
+          <%= "("+ "#{article.visited_count}"+")" %>
+          </td>
+          <% if current_user.present? %>
+            <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article)%></td>
+            <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete %></td>
+          <% end %>
+        </tr>
+      </tbody>
       <% end %>
     </table>
 

@@ -9,7 +9,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do
+    collection do
+      get :welcome
+      get :application
+    end
+  end
+
 
   root to: "articles#welcome"
 end
