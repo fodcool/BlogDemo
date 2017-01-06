@@ -20,7 +20,7 @@
     <table style="width: 100%; text-align: center;" class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th style="width: 25%; text-align: center;">时间</td>
+          <th style="width: 20%; text-align: center;">时间</td>
           <th style="text-align: center;">标题</td>
         <% if current_user.present? %>
           <th colspan=2 style="width: 12%; text-align: center;">操作</td>
@@ -31,7 +31,7 @@
       <% @articles.each do |article| %>
       <tbody>
         </tr>
-          <td style="vertical-align: middle;"><%= article.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td style="vertical-align: middle;"><%= article.date %></td>
           <td style="text-align: left; margin-left: 10px;">
           <%= link_to article.title, article %>
           <%= "("+ "#{article.visited_count}"+")" %>

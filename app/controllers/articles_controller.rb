@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :get_by_id, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(12)
+    @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(20).order("date desc")
 
     #@search = Article.where("category_id = ?", params[:category_id])
     #def self.search(search)

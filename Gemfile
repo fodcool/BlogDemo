@@ -6,6 +6,8 @@ gem 'mysql2',"0.3.17"
 
 gem "twitter-bootstrap-rails"
 
+gem 'bootstrap-datepicker-rails'
+
 gem 'devise'
 
 gem 'sass-rails', '~> 4.0.3'
