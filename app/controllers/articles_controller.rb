@@ -4,17 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(20).order("date desc")
-
-    #@search = Article.where("category_id = ?", params[:category_id])
-    #def self.search(search)
-    #  where("name LIKE ?", "%#{search}%")
-    #  where("content LIKE ?", "%#{search}%")
-    #end
-    #if params[:search]
-    #  @search = Article.search(params[:search]).order("created_at DESC")
-    #else
-    #  @search = Article.all.order('created_at DESC')
-    #end
+    @articles = @articles.where("title like '%#{params[:title_or_content]}%' or
+      content like '%#{params[:title_or_content]}%'") if params[:title_or_content].present?
   end
 
   def show

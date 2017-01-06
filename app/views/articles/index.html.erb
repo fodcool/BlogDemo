@@ -9,12 +9,12 @@
 
   <h2 style="margin-bottom: 20px; color: #20537f; margin-top: 0;"> <%= Article.title params[:category_id] %> </h2>
 
-  <!--
-  <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "模糊匹配" %>
-    <%= submit_tag "Search" %>
+  <%= form_tag articles_path, :method => 'get'  do %>
+    <%= hidden_field_tag :category_id, params[:category_id] %>
+    <%= text_field_tag :title_or_content, params[:title_or_content], placeholder: "模糊匹配,全文,如:ruby on rails", style: "width: 250px; background-color: rgba(241, 241, 241, 0.74);" %>
+    <%= submit_tag "搜索" %>
   <% end %>
-  -->
+  <br/>
 
   <div style="font-size: 18px;">
     <table style="width: 100%; text-align: center;" class="table table-bordered table-hover">

@@ -11,7 +11,6 @@
 $( document ).ready(function() {
     $('.datepicker_input').datepicker({
         format: 'yyyy-mm-dd',
-        startDate: '-3d',
         autoclose: true
     });
 });
