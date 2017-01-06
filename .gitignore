@@ -14,6 +14,8 @@
 /config/database.yml
 /config/thin.yml
 
+/public/assets
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
