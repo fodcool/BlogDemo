@@ -36,6 +36,12 @@ div ul li a {
                     <%= link_to '技术', articles_path(category_id: 2) %>
                 </li>
                 <li>
+                    <%= link_to '音乐', articles_path(category_id: 3) %>
+                </li>
+                <li>
+                    <%= link_to '翻译', articles_path(category_id: 4) %>
+                </li>
+                <li>
                     <%= link_to '博主简介', current_user.blank? ? user_path(id: 1) : current_user  %>
                 </li>
                 <li class="register_and_log_on">

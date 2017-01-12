@@ -29,8 +29,12 @@
   </div>
 
   <% if @article.category_id ==1 %>
-    <%= link_to "返回博客列表", articles_path(category_id: 1) %>
-  <% else %>
-    <%= link_to "返回博客列表", articles_path(category_id: 2) %>
+    <%= link_to "返回列表", articles_path(category_id: 1), class: "btn btn-primary" %>
+  <% elsif %>
+    <%= link_to "返回列表", articles_path(category_id: 2), class: "btn btn-primary" %>
+  <% elsif %>
+    <%= link_to "返回列表", articles_path(category_id: 3), class: "btn btn-primary" %>
+  <% elsif %>
+    <%= link_to "返回列表", articles_path(category_id: 4), class: "btn btn-primary" %>
   <% end %>
 </div>

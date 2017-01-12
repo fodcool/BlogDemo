@@ -11,8 +11,7 @@
   <p style="width: 80%; margin: 0 auto;"> <%= f.cktext_area :content, placeholder: "请输入正文内容" %> </p>
   <br/>
   <%= f.label :category_id, "分类" %>
-  <%#= f.select :category_id, options_for_select([["生活", 1],["技术", 2]],2) %>
-  <%= f.select :category_id, options_for_select(Article.categories, 2) %>
+  <%= f.select :category_id, options_for_select([["生活", 1],["技术", 2],["音乐", 3],["翻译", 4]],2) %>
   <br/>
   <%= f.label :date, "日期:" %>
   <%= f.text_field :date, :class=>"datepicker_input" %>
