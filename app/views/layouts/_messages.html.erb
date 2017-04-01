@@ -1,0 +1,7 @@
+<%= javascript_tag do %>
+  <%- flash.each do |level, message| %>
+    Lobibox.alert('<%= level %>', {
+        msg: "<%= j(message) %>"
+    });
+  <%- end %>
+<% end %>

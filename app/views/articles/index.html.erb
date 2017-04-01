@@ -46,7 +46,9 @@
       <% end %>
     </table>
 
-    <%= paginate @articles %><br/>
+    <div class="table-actions-bottom">
+      <%= pagination @articles %><br/>
+    </div>
 
     <% if current_user.present? %>
       <td><%= link_to "创建博客", new_article_path %></td>
