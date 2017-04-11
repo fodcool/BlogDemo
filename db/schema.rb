@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105045908) do
+ActiveRecord::Schema.define(version: 20170411065900) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170105045908) do
     t.datetime "updated_at"
     t.integer  "visited_count", default: 0
     t.string   "date"
+    t.boolean  "is_hot",        default: false
   end
 
   create_table "categories", force: true do |t|

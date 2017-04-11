@@ -24,7 +24,7 @@
           <th style="width: 20%; text-align: center;">时间</td>
           <th style="text-align: center;">标题</td>
         <% if current_user.present? %>
-          <th colspan=2 style="width: 12%; text-align: center;">操作</td>
+          <th colspan=3 style="width: 12%; text-align: center;">操作</td>
         <% end %>
         </tr>
       </thead>
@@ -38,8 +38,9 @@
           <%= "("+ "#{article.visited_count}"+")" %>
           </td>
           <% if current_user.present? %>
-            <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article)%></td>
-            <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete %></td>
+            <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article), class: "btn btn-primary btn-sm" %></td>
+            <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete, data: { confirm: "确定删除该文章么?" },  class: "btn btn-danger btn-sm"  %></td>
+            <td style="vertical-align: middle;"><%= link_to "置顶", set_hot_articles_path(id: article.id), :method => :post, class: "btn btn-success btn-sm" %></td>
           <% end %>
         </tr>
       </tbody>
@@ -51,7 +52,7 @@
     </div>
 
     <% if current_user.present? %>
-      <td><%= link_to "创建博客", new_article_path %></td>
+      <td><%= link_to "创建博客", new_article_path, class: "btn btn-primary" %></td>
     <% end %>
   </div>
 </div>

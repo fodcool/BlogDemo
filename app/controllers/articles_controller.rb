@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :get_by_id, :only => [:show, :edit, :update, :destroy]
+  before_action :get_by_id, :only => [:show, :edit, :update, :destroy, :set_hot]
 
   def index
     @articles = Article.where("category_id = ?", params[:category_id]).page(params[:page]).per(20).order("date desc")
@@ -44,6 +44,14 @@ class ArticlesController < ApplicationController
   end
 
   def welcome
+  end
+
+  def set_hot
+    @article.is_hot = true
+    @article.date = Time.now.strftime("%Y-%m-%d")
+    @article.save
+    #flash[:success] = "置顶成功"
+    redirect_to articles_path(category_id: 2)
   end
 
   private

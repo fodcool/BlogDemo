@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     collection do
       get :welcome
+      post :set_hot
     end
   end
 
