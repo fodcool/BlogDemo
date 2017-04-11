@@ -1,5 +1,4 @@
 <div style="width: 80%;
-     height: 1000px;
      margin: 0 auto;
      background-color: rgba(255, 255, 255, 0.73);
      text-align: center;
@@ -16,9 +15,9 @@
     padding-right: 20%;
     font-weight: bold;"><%= @article.title %></p>
 
-  <div style="width: 80%;
+  <div style="width: 86%;
     margin: 0 auto;
-    height: 760px;
+    min-height: 760px;
     background-color: rgba(255, 255, 255, 0.36);
     margin-bottom: 20px;
     padding: 15px;
@@ -29,12 +28,12 @@
   </div>
 
   <% if @article.category_id ==1 %>
-    <%= link_to "返回列表", articles_path(category_id: 1), class: "btn btn-primary", style: "margin-top: 20px;" %>
+    <%= link_to "返回列表", articles_path(category_id: 1), class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 30px;" %>
   <% elsif %>
-    <%= link_to "返回列表", articles_path(category_id: 2), class: "btn btn-primary", style: "margin-top: 20px;" %>
+    <%= link_to "返回列表", articles_path(category_id: 2), class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 30px;" %>
   <% elsif %>
-    <%= link_to "返回列表", articles_path(category_id: 3), class: "btn btn-primary", style: "margin-top: 20px;" %>
+    <%= link_to "返回列表", articles_path(category_id: 3), class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 30px;" %>
   <% elsif %>
-    <%= link_to "返回列表", articles_path(category_id: 4), class: "btn btn-primary", style: "margin-top: 20px;" %>
+    <%= link_to "返回列表", articles_path(category_id: 4), class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 30px;" %>
   <% end %>
 </div>
