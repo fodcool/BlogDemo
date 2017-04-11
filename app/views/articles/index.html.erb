@@ -40,7 +40,7 @@
           <% if current_user.present? %>
             <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article), class: "btn btn-primary btn-sm" %></td>
             <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete, data: { confirm: "确定删除该文章么?" },  class: "btn btn-danger btn-sm"  %></td>
-            <td style="vertical-align: middle;"><%= link_to "置顶", set_hot_articles_path(id: article.id), :method => :post, class: "btn btn-success btn-sm" %></td>
+            <td style="vertical-align: middle;"><%= link_to "置顶", set_hot_articles_path(id: article.id), data: { confirm: "确定要置顶该文章么,会改变创建时间?" }, :method => :post, class: "btn btn-success btn-sm" %></td>
           <% end %>
         </tr>
       </tbody>

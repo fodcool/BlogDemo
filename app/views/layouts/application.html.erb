@@ -13,9 +13,11 @@
   }
   </style>
 </head>
+
 <body>
   <%= render 'shared/nav' %>
   <%= yield %>
+  <%= render '/layouts/messages' %>
   <%= render 'shared/footer' %>
 </body>
 </html>

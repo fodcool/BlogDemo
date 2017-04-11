@@ -6,6 +6,7 @@
 //= require ckeditor/init
 //= require jquery.validate.js
 //= require bootstrap-datepicker
+//= require lobibox.min
 
 
 $( document ).ready(function() {

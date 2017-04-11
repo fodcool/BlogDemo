@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
     @article.is_hot = true
     @article.date = Time.now.strftime("%Y-%m-%d")
     @article.save
-    #flash[:success] = "置顶成功"
+    flash[:success] = "置顶成功"
     redirect_to articles_path(category_id: 2)
   end
 
