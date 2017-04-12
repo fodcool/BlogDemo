@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
     else
       redirect_to articles_path(category_id: 2)
     end
+    flash[:success] = "修改成功"
   end
 
   def new
@@ -36,10 +37,12 @@ class ArticlesController < ApplicationController
     else
       redirect_to articles_path(category_id: 2)
     end
+    flash[:success] = "新建成功"
   end
 
   def destroy
     @article.delete
+    flash[:success] = "删除成功"
     redirect_to :back
   end
 

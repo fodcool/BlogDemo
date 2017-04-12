@@ -7,6 +7,7 @@
 //= require jquery.validate.js
 //= require bootstrap-datepicker
 //= require lobibox.min
+//= require toastmessage-min.js
 
 
 $( document ).ready(function() {
