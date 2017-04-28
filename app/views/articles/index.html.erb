@@ -29,23 +29,23 @@
         </tr>
       </thead>
 
-      <% @articles.each do |article| %>
-      <tbody>
-        </tr>
-          <td style="vertical-align: middle;"><%= article.date %></td>
-          <td style="text-align: left; margin-left: 10px;">
-          <%= link_to article.title, article %>
-          <%= "("+ "#{article.visited_count}"+")" %>
-          </td>
-          <% if current_user.present? %>
-            <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article), class: "btn btn-primary btn-xs" %></td>
-            <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete, data: { confirm: "确定删除该文章么?" },  class: "btn btn-danger btn-xs"  %></td>
-            <td style="vertical-align: middle;"><%= link_to "置顶", set_hot_articles_path(id: article.id), :id => "zhi_ding", data: { confirm: "确定要置顶该文章么,会改变创建时间?" }, :method => :post, class: "btn btn-success btn-xs" %></td>
-            <!--<td><a href="javascript:showSuccessToast();">not sticky</a> </td> -->
-          <% end %>
-        </tr>
+      <tbody id="article_table" >
+        <% @articles.each do |article| %>
+          <tr data-id = '<%= article.id %>' class="ui-state-default">
+            <td style="vertical-align: middle;"><%= article.date %></td>
+            <td style="text-align: left; margin-left: 10px;">
+              <%= link_to article.title, article %>
+              <%= "("+ "#{article.visited_count}"+")" %>
+            </td>
+            <% if current_user.present? %>
+              <td style="vertical-align: middle;"><%= link_to "编辑", edit_article_path(article), class: "btn btn-primary btn-xs" %></td>
+              <td style="vertical-align: middle;"><%= link_to "删除", article, :method => :delete, data: { confirm: "确定删除该文章么?" },  class: "btn btn-danger btn-xs"  %></td>
+              <td style="vertical-align: middle;"><%= link_to "置顶", set_hot_articles_path(id: article.id), :id => "zhi_ding", data: { confirm: "确定要置顶该文章么,会改变创建时间?" }, :method => :post, class: "btn btn-success btn-xs" %></td>
+              <!--<td><a href="javascript:showSuccessToast();">not sticky</a> </td> -->
+            <% end %>
+          </tr>
+        <% end %>
       </tbody>
-      <% end %>
     </table>
 
     <div class="table-actions-bottom">
@@ -58,7 +58,32 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<script>
+    $('#article_table').sortable({
+      opacity: 0.6,
+      revert: true,
+      cursor: 'move',
+      update: function() {
+        neworder = new Array();
+        $(this).children().each(function() {
+          id = $(this).attr("data-id");
+          neworder.push({
+            id: id
+          });
+        });
+
+        $.ajax({
+          url: "/articles/sort",
+          type: "POST",
+          data: {
+            articles: JSON.stringify(neworder)
+          }
+        });
+
+        console.log(neworder);
+      }
+    }).disableSelection();
+
 
     $("#zhi_ding").click(function showSuccessToast() {
         $().toastmessage('showSuccessToast', "置顶成功");

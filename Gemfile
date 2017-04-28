@@ -22,3 +22,5 @@ gem 'kaminari', '0.16.1'
 gem 'log4r', '1.1.9'
 gem 'thin'
 
+gem 'jquery-ui-rails', '4.0.5'
+

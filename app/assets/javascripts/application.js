@@ -1,6 +1,7 @@
 
 
 //= require jquery.js
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require ckeditor/init

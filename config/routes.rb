@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :welcome
       post :set_hot
+      post :sort
     end
   end
 
